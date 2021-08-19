@@ -4,6 +4,7 @@ import Container from "./components/Container";
 import AppBar from "./components/AppBar";
 import HomePage from "./pages/HomePage";
 import MoviesPage from "./pages/MoviesPage";
+import MovieDetailsPage from "./pages/MovieDetailsPage";
 import "./App.css";
 
 function App() {
@@ -14,8 +15,11 @@ function App() {
         <Route path="/" exact>
           <HomePage />
         </Route>
-        <Route path="/movies">
+        <Route path="/movies" exact>
           <MoviesPage />
+        </Route>
+        <Route path="/movies/:movieID">
+          <MovieDetailsPage />
         </Route>
       </Switch>
     </Container>
