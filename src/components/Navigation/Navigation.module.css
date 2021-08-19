@@ -1,0 +1,16 @@
+.navList {
+  display: flex;
+  list-style: none;
+}
+.link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.activLink {
+  color: red;
+}
