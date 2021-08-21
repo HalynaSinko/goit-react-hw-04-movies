@@ -11,9 +11,16 @@ async function fetchWithErrorHendling(url = "", config = {}) {
     : Promise.reject(new Error("Not found"));
 }
 
-// api.themoviedb.org/3/trending/movie/week?api_key=<<api_key>>
+// api.themoviedb.org/3/trending/movie/day?api_key=<<api_key>>
 
 export function fetchTrendingMovies() {
   return fetchWithErrorHendling(`${BASE_URL}
-/trending/movie/week?api_key=${API_KEY}`);
+/trending/movie/day?api_key=${API_KEY}`);
+}
+
+// https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US
+
+export function fetchMovieDetails(movieId) {
+  return fetchWithErrorHendling(`${BASE_URL}
+/movie/${movieId}?api_key=${API_KEY}&language=en-US`);
 }
