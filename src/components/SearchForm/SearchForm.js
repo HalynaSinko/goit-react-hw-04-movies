@@ -30,7 +30,7 @@ export default function SearchForm({ onSubmit }) {
         type="text"
         autoComplete="off"
         autoFocus
-        placeholder="Search movie"
+        placeholder="Enter query"
         onChange={handleChangeInput}
       />
 
