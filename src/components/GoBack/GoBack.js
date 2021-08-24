@@ -1,5 +1,5 @@
 const GoBack = () => {
-  return <button>Go back</button>;
+  return <button type="button">Go back</button>;
 };
 
 export default GoBack;

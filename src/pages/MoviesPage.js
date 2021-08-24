@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import { Link, useRouteMatch } from "react-router-dom";
+import { useRouteMatch, useLocation } from "react-router-dom";
 // import PropTypes from "prop-types";
 import SearchForm from "../components/SearchForm";
 import * as moviesApi from "../services/moviesApi";
+import MoviesGallery from "../components/MoviesGallery/MoviesGallery";
 
 export default function MoviesPage() {
   const { url } = useRouteMatch();
+  const location = useLocation();
   const [searchQuery, setSearchQuery] = useState("");
   const [movies, setMovies] = useState([]);
 
@@ -28,14 +30,19 @@ export default function MoviesPage() {
       <p> Movies Page</p>
       <SearchForm onSubmit={hendleOnSubmit} />
       {movies && (
-        <ul>
-          {movies.map((movie) => (
-            <li key={movie.id}>
-              <Link to={`${url}/${movie.id}`}>{movie.original_title}</Link>
-            </li>
-          ))}
-        </ul>
+        <MoviesGallery movies={movies} url={url} location={location} />
       )}
     </div>
   );
 }
+
+// {
+//   /* <li key={movie.id}>
+//               <Link to={`${url}/${movie.id}`}>{movie.original_title}</Link>
+//             </li> */
+// }
+
+//  to={{
+//                 pathname: `${url}/${movie.id}`,
+//                 state: { from: location },
+//               }}
