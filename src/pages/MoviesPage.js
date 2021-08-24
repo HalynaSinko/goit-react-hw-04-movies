@@ -1,19 +1,23 @@
 import { useState, useEffect } from "react";
-import { useRouteMatch, useLocation } from "react-router-dom";
+import { useRouteMatch, useLocation, useHistory } from "react-router-dom";
 // import PropTypes from "prop-types";
 import SearchForm from "../components/SearchForm";
 import * as moviesApi from "../services/moviesApi";
-import MoviesGallery from "../components/MoviesGallery/MoviesGallery";
+import MoviesGallery from "../components/MoviesGallery";
 
 export default function MoviesPage() {
   const { url } = useRouteMatch();
   const location = useLocation();
-  const [searchQuery, setSearchQuery] = useState("");
+  const history = useHistory();
+
+  const query = new URLSearchParams(location.search).get("query");
+
+  const [searchQuery, setSearchQuery] = useState(query ?? "");
   const [movies, setMovies] = useState([]);
 
-  // console.log(url);
   function hendleOnSubmit(query) {
     setSearchQuery(query);
+    history.push({ ...location, search: `query=${query}` });
   }
 
   useEffect(() => {
@@ -35,14 +39,3 @@ export default function MoviesPage() {
     </div>
   );
 }
-
-// {
-//   /* <li key={movie.id}>
-//               <Link to={`${url}/${movie.id}`}>{movie.original_title}</Link>
-//             </li> */
-// }
-
-//  to={{
-//                 pathname: `${url}/${movie.id}`,
-//                 state: { from: location },
-//               }}
