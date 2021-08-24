@@ -1,5 +1,3 @@
-// import { func } from "prop-types";
-
 const BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = "1c99cb518fe35a9a215bbe8dda81cde2";
 
