@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 import PropTypes from "prop-types";
 
 import s from "./SearchForm.module.css";
@@ -14,6 +15,7 @@ export default function SearchForm({ onSubmit }) {
     event.preventDefault();
 
     if (searchQuery.trim() === "") {
+      toast.error("Enter query, pleace.");
       return;
     }
 

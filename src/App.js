@@ -1,20 +1,23 @@
-import { lazy, Suspense } from "react";
+import React, { lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Container from "./components/Container";
 import AppBar from "./components/AppBar";
 import "./App.css";
 
 const HomePage = lazy(() =>
-  import("./pages/HomePage.js" /* webpackChunkName: "home-page"*/)
+  import("./pages/HomePage" /* webpackChunkName: "home-page"*/)
 );
 const MoviesPage = lazy(() =>
-  import("./pages/MoviesPage.js" /* webpackChunkName: "movies-page"*/)
+  import("./pages/MoviesPage" /* webpackChunkName: "movies-page"*/)
 );
 const MovieDetailsPage = lazy(() =>
-  import(
-    "./pages/MovieDetailsPage.js" /* webpackChunkName: "movie-details-page"*/
-  )
+  import("./pages/MovieDetailsPage" /* webpackChunkName: "movie-details-page"*/)
+);
+const NotFoundPage = lazy(() =>
+  import("./pages/NotFoundPage.js" /* webpackChunkName: "not-found-page"*/)
 );
 
 function App() {
@@ -32,8 +35,12 @@ function App() {
           <Route path="/movies">
             <MoviesPage />
           </Route>
+          <Route>
+            <NotFoundPage />
+          </Route>
         </Switch>
       </Suspense>
+      <ToastContainer autoClose={3000} />
     </Container>
   );
 }
