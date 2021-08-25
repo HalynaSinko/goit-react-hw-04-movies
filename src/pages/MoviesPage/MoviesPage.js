@@ -10,7 +10,7 @@ export default function MoviesPage() {
   const { url } = useRouteMatch();
   const location = useLocation();
   const history = useHistory();
-  console.log(location);
+  // console.log(location);
   const query = new URLSearchParams(location.search).get("query");
 
   const [searchQuery, setSearchQuery] = useState(query ?? "");

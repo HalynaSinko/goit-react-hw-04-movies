@@ -11,7 +11,7 @@ const Cast = ({ movieId }) => {
   }, [movieId]);
   return (
     <>
-      {actors && (
+      {actors && actors.length > 0 ? (
         <ul className={s.actorsList}>
           {actors.map((actor) => (
             <li key={actor.id} className={s.actorsItem}>
@@ -30,6 +30,8 @@ const Cast = ({ movieId }) => {
             </li>
           ))}
         </ul>
+      ) : (
+        "We don't have any information about actors this movie."
       )}
     </>
   );
