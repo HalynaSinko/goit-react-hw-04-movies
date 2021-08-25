@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouteMatch, useLocation, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
-// import PropTypes from "prop-types";
+
 import SearchForm from "../../components/SearchForm";
 import * as moviesApi from "../../services/moviesApi";
 import MoviesGallery from "../../components/MoviesGallery";
