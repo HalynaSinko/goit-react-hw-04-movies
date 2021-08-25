@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import s from "./MoviesItem.module.css";
 
 const MoviesItem = ({ url, location, movieId, title }) => {
   return (
-    <li>
+    <li className={s.moviesItem}>
       <Link
         to={{
           pathname: `${url}/${movieId}`,
@@ -15,3 +17,8 @@ const MoviesItem = ({ url, location, movieId, title }) => {
   );
 };
 export default MoviesItem;
+
+MoviesItem.propTypes = {
+  movieId: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+};

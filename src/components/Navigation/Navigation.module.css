@@ -1,5 +1,6 @@
 .navList {
   display: flex;
+  margin-bottom: 10px;
   list-style: none;
 }
 .link {
