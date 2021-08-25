@@ -1,0 +1,10 @@
+/* .actorsList{
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+    padding: 15px;
+}*/
+
+.actorsItem {
+  margin: 15px;
+}
