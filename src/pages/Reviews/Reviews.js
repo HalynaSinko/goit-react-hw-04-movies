@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import * as moviesApi from "../../services/moviesApi";
-import s from "./Reviews.module.css";
+import ReviewsList from "../../components/ReviewsList";
 
 const Reviews = ({ movieId }) => {
   const [reviews, setReviews] = useState(null);
@@ -13,14 +13,7 @@ const Reviews = ({ movieId }) => {
   return (
     <>
       {reviews && reviews.length > 0 ? (
-        <ul className={s.reviewsList}>
-          {reviews.map((review) => (
-            <li key={review.id} className={s.reviewsItem}>
-              <p>Author: {review.author}.</p>
-              <p>{review.content}</p>
-            </li>
-          ))}
-        </ul>
+        <ReviewsList reviews={reviews} />
       ) : (
         "We don't have any reviews for this movie."
       )}
