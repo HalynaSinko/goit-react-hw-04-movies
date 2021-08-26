@@ -11,6 +11,7 @@ import {
 import * as moviesApi from "../../services/moviesApi";
 import Button from "../../components/Button";
 import MovieDetailsInfo from "../../components/MovieDetailsInfo";
+import NavBarMovieDetails from "../../components/NavBarMovieDetails";
 import s from "./MovieDetailsPage.module.css";
 
 const Cast = lazy(() => import("../Cast" /* webpackChunkName: "cast"*/));
@@ -51,30 +52,7 @@ export default function MovieDetailsPage() {
           />
 
           <hr />
-
-          <ul className={s.addInfo}>
-            Additional information
-            <li key={"cast"}>
-              <NavLink
-                to={{
-                  pathname: `${url}/cast`,
-                  state: { from: location?.state?.from ?? "/movies" },
-                }}
-              >
-                Cast
-              </NavLink>
-            </li>
-            <li key={"reviews"}>
-              <NavLink
-                to={{
-                  pathname: `${url}/reviews`,
-                  state: { from: location?.state?.from ?? "/movies" },
-                }}
-              >
-                Reviews
-              </NavLink>
-            </li>
-          </ul>
+          <NavBarMovieDetails url={url} location={location} />
           <hr />
           <Suspense fallback={<div>Loading...</div>}>
             <Route path={`${path}/cast`}>
