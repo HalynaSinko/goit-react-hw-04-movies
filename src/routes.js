@@ -3,7 +3,7 @@ const routes = {
   pathMoviesPage: "/movies",
   pathMovieDetailsPage: "/movies/:movieId",
   pathSubPageCast: "/cast",
-  pathSubPageReviews: "/revievs",
+  pathSubPageReviews: "/reviews",
 };
 
 export default routes;

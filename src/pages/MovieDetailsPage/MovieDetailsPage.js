@@ -12,7 +12,6 @@ import Button from "../../components/Button";
 import MovieDetailsInfo from "../../components/MovieDetailsInfo";
 import NavBarMovieDetails from "../../components/NavBarMovieDetails";
 import routes from "../../routes";
-import s from "./MovieDetailsPage.module.css";
 
 const Cast = lazy(() => import("../Cast" /* webpackChunkName: "cast"*/));
 const Reviews = lazy(() =>
@@ -67,5 +66,3 @@ export default function MovieDetailsPage() {
     </>
   );
 }
-
-<div className={s.movieCard}></div>;
