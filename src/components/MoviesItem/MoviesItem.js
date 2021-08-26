@@ -2,16 +2,16 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import s from "./MoviesItem.module.css";
 
-const MoviesItem = ({ url, location, movieId, title }) => {
+const MoviesItem = ({ url, location, movie }) => {
   return (
     <li className={s.moviesItem}>
       <Link
         to={{
-          pathname: `${url}/${movieId}`,
+          pathname: `${url}/${movie.id}`,
           state: { from: location },
         }}
       >
-        {title}
+        {movie.title}
       </Link>
     </li>
   );
@@ -19,6 +19,5 @@ const MoviesItem = ({ url, location, movieId, title }) => {
 export default MoviesItem;
 
 MoviesItem.propTypes = {
-  movieId: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
+  movie: PropTypes.array,
 };

@@ -10,8 +10,7 @@ const MoviesGallery = ({ movies, url, location }) => {
           key={movie.id}
           url={url}
           location={location}
-          movieId={movie.id}
-          title={movie.title}
+          movie={movie}
         />
       ))}
     </ul>
@@ -23,6 +22,7 @@ export default MoviesGallery;
 MoviesGallery.propTypes = {
   movies: PropTypes.array,
   url: PropTypes.string.isRequired,
+  // location:
 };
 
 // MoviesGallery.propTypes = {

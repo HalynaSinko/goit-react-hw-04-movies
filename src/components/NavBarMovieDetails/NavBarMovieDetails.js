@@ -1,7 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useRouteMatch } from "react-router-dom";
 import s from "./NavBarMovieDetails.module.css";
 
-const NavBarMovieDetails = ({ url, location }) => {
+const NavBarMovieDetails = ({ location }) => {
+  const { url } = useRouteMatch();
+
   return (
     <ul className={s.addInfo}>
       Additional information
