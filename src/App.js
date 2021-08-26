@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Container from "./components/Container";
 import AppBar from "./components/AppBar";
+import routes from "./routes";
 import "./App.css";
 
 const HomePage = lazy(() =>
@@ -26,13 +27,13 @@ function App() {
       <AppBar />
       <Suspense fallback={<div>Loading...</div>}>
         <Switch>
-          <Route path="/" exact>
+          <Route path={routes.pathHomePage} exact>
             <HomePage />
           </Route>
-          <Route path="/movies/:movieId">
+          <Route path={routes.pathMovieDetailsPage}>
             <MovieDetailsPage />
           </Route>
-          <Route path="/movies">
+          <Route path={routes.pathMoviesPage}>
             <MoviesPage />
           </Route>
           <Route>

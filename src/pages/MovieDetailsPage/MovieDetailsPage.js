@@ -1,7 +1,6 @@
 import { useState, useEffect, lazy, Suspense } from "react";
 import {
   useParams,
-  NavLink,
   useRouteMatch,
   Route,
   useLocation,
@@ -12,6 +11,7 @@ import * as moviesApi from "../../services/moviesApi";
 import Button from "../../components/Button";
 import MovieDetailsInfo from "../../components/MovieDetailsInfo";
 import NavBarMovieDetails from "../../components/NavBarMovieDetails";
+import routes from "../../routes";
 import s from "./MovieDetailsPage.module.css";
 
 const Cast = lazy(() => import("../Cast" /* webpackChunkName: "cast"*/));
@@ -55,10 +55,10 @@ export default function MovieDetailsPage() {
           <NavBarMovieDetails url={url} location={location} />
           <hr />
           <Suspense fallback={<div>Loading...</div>}>
-            <Route path={`${path}/cast`}>
+            <Route path={`${path}${routes.pathSubPageCast}`}>
               {movie && <Cast movieId={movieId} />}
             </Route>
-            <Route path={`${path}/reviews`}>
+            <Route path={`${path}${routes.pathSubPageReviews}`}>
               {movie && <Reviews movieId={movieId} />}
             </Route>
           </Suspense>
