@@ -11,14 +11,9 @@ export default function HomePage() {
   const [trendingMovies, setTrendingMovies] = useState(null);
 
   useEffect(() => {
-    moviesApi
-      .getTrendingMovies()
-      .then(({ results }) => {
-        setTrendingMovies(results);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    moviesApi.getTrendingMovies().then(({ results }) => {
+      setTrendingMovies(results);
+    });
   }, []);
 
   return (

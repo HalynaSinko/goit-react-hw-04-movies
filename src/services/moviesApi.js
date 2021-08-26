@@ -15,15 +15,13 @@ axios.defaults.params = {
 // async function fetchWithErrorHendling(url = "", config = {}) {
 //   const response = await axios.get(url, config);
 
-//   return response.ok ? response : Promise.reject(new Error("Not found"));
+//   return response.status === 200
+//     ? response.data
+//     : Promise.reject(new Error("Not found"));
 // }
 
-// export async function getTrendingMovies() {
-//   const { data } = await axios
-//     .get("/trending/movie/day")
-//     .then((data) => data)
-//     .catch((error) => toast.error(error));
-//   return data;
+// export function getTrendingMovies() {
+//   return fetchWithErrorHendling("/trending/movie/day");
 // }
 
 export async function getTrendingMovies() {
