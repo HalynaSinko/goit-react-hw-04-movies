@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import s from "./MoviesItem.module.css";
 
 const MoviesItem = ({ url, location, movie }) => {
@@ -17,7 +17,3 @@ const MoviesItem = ({ url, location, movie }) => {
   );
 };
 export default MoviesItem;
-
-MoviesItem.propTypes = {
-  movie: PropTypes.array,
-};

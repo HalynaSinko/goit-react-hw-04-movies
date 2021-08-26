@@ -27,7 +27,7 @@ axios.defaults.params = {
 export async function getTrendingMovies() {
   try {
     const { data } = await axios.get("/trending/movie/day");
-    console.log(data);
+
     return data;
   } catch (error) {
     toast.error(error);
@@ -68,7 +68,6 @@ export async function getActorsMovie(movieId) {
 export async function getReviewsMovie(movieId) {
   try {
     const { data } = await axios.get(`/movie/${movieId}/reviews?`);
-    console.log(data);
     return data;
   } catch (error) {
     toast.error(error);
