@@ -27,7 +27,7 @@ export default function MovieDetailsPage() {
   const { movieId } = useParams();
 
   useEffect(() => {
-    moviesApi.fetchMovieDetails(movieId).then(setMovie);
+    moviesApi.getMovieDetails(movieId).then(setMovie);
   }, [movieId]);
 
   const onGoBack = () => {

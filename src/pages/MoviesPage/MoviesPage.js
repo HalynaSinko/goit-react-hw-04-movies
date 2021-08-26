@@ -25,7 +25,7 @@ export default function MoviesPage() {
     if (!searchQuery) {
       return;
     }
-    moviesApi.fetchMovieByQuery(searchQuery).then(({ results }) => {
+    moviesApi.getMovieByQuery(searchQuery).then(({ results }) => {
       if (results.length === 0) {
         toast.error("Results not found.");
       }

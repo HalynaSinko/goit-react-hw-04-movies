@@ -7,7 +7,7 @@ import iconProfile from "../../images/person_profile.svg";
 const Cast = ({ movieId }) => {
   const [actors, setActors] = useState(null);
   useEffect(() => {
-    moviesApi.fetchActorsMovie(movieId).then(({ cast }) => setActors(cast));
+    moviesApi.getActorsMovie(movieId).then(({ cast }) => setActors(cast));
   }, [movieId]);
   return (
     <>

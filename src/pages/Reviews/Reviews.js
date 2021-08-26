@@ -7,7 +7,7 @@ const Reviews = ({ movieId }) => {
   const [reviews, setReviews] = useState(null);
   useEffect(() => {
     moviesApi
-      .fetchReviewsMovie(movieId)
+      .getReviewsMovie(movieId)
       .then(({ results }) => setReviews(results));
   }, [movieId]);
   return (

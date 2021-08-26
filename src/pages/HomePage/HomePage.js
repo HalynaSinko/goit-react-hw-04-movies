@@ -12,8 +12,13 @@ export default function HomePage() {
 
   useEffect(() => {
     moviesApi
-      .fetchTrendingMovies()
-      .then(({ results }) => setTrendingMovies(results));
+      .getTrendingMovies()
+      .then(({ results }) => {
+        setTrendingMovies(results);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
