@@ -1,3 +1,7 @@
 .mainInfoCard {
   display: flex;
 }
+
+.cardImg {
+  margin-right: 25px;
+}
